@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Images\Jugadores.png</Source>
+      <Name>Images\Jugadores</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\Jugadores.xnb</Output>
+      <Time>2014-04-20T02:25:32.6158087-03:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Jugador2.png</Source>
+      <Name>Images\Jugador2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\Jugador2.xnb</Output>
+      <Time>2014-04-20T02:48:39.5731381-03:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\NPC.png</Source>
+      <Name>Images\NPC</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\NPC.xnb</Output>
+      <Time>2014-04-20T02:48:39.5801385-03:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{928A09B0-B174-4C4B-98EB-568EF84737EB}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1Content\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-03:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-04-17T23:59:49.4354041-03:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
