@@ -19,22 +19,16 @@ namespace CP_1
         int evasionRange;
         bool evade = false;
 
-        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, string collisionCueName, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, collisionCueName)
+        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
             this.evasionRange = evasionRange;
         }
 
-        public EvadingSprite(Texture2D textureImage, Vector2 position,
-            Point frameSize, int collisionOffset, Point currentFrame,
-            Point sheetSize, Vector2 speed, int millisecondsPerFrame,
-            string collisionCueName, SpriteManager spriteManager,
-            float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset,
-            currentFrame, sheetSize, speed, millisecondsPerFrame,
-            collisionCueName)
+        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, millisecondsPerFrame, SpEfect, sentido)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
@@ -81,6 +75,11 @@ namespace CP_1
             }
 
             base.Update(gameTime, clientBounds);
+        }
+
+        public override Point psentido
+        {
+            get { return sentido; }
         }
     }
 }
