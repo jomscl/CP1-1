@@ -11,3 +11,8 @@ C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.csprojR
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.exe
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.pdb
+C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\Jugadores.xnb
+C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\Jugador2.xnb
+C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\NPC.xnb
+C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe
+C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.pdb

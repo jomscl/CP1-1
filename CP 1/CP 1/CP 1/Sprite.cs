@@ -21,14 +21,43 @@ namespace CP_1
         protected Vector2 position;
         SpriteEffects SpEfect;
         protected Point sentido;
+        protected float evasionSpeedModifier;
+        protected int evasionRange;
+        public string collisionCueName { get; private set; }
 
-        public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido) 
-            : this(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, defaultMillisecondsPerFrame, sentido)
-        {
+        //public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange) 
+        //    : this(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, defaultMillisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
+        //{
         
+        //}
+
+        public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
+           int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
+           string collisionCueName, SpriteEffects SpEfect, Point sentido)
+            : this(textureImage, position, frameSize, collisionOffset, currentFrame,
+            sheetSize, speed, defaultMillisecondsPerFrame, collisionCueName, SpEfect, sentido)
+        {
         }
 
-        public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido)
+        //public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido, float evasionSpeedModifier, int evasionRange)
+        //{
+        //    this.textureImage = textureImage;
+        //    this.position = position;
+        //    this.frameSize = frameSize;
+        //    this.collisionOffset = collisionOffset;
+        //    this.currentFrame = currentFrame;
+        //    this.sheetSize = sheetSize;
+        //    this.speed = speed;
+        //    this.millisecondsPerFrame = millisecondsPerFrame;
+        //    this.SpEfect = SpEfect;
+        //    this.sentido = sentido;
+        //    this.evasionSpeedModifier = evasionSpeedModifier;
+        //    this.evasionRange = evasionRange;
+        //}
+
+        public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
+            int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
+            int millisecondsPerFrame, string collisionCueName, SpriteEffects SpEfect, Point sentido)
         {
             this.textureImage = textureImage;
             this.position = position;
@@ -37,9 +66,8 @@ namespace CP_1
             this.currentFrame = currentFrame;
             this.sheetSize = sheetSize;
             this.speed = speed;
+            this.collisionCueName = collisionCueName;
             this.millisecondsPerFrame = millisecondsPerFrame;
-            this.SpEfect = SpEfect;
-            this.sentido = sentido;
         }
 
         public virtual void Update(GameTime gameTime, Rectangle clientBounds)
@@ -85,6 +113,11 @@ namespace CP_1
         public abstract Point psentido
         {
             get;
+        }
+
+        public Vector2 GetPosition
+        {
+            get { return position; }
         }
 
         public Rectangle collisionRect

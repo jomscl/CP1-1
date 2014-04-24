@@ -47,11 +47,11 @@ namespace CP_1
         protected override void LoadContent( )
         {
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
-            player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"),Vector2.Zero, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), SpriteEffects.None, new Point(0,0));
-            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1,1), SpriteEffects.None, new Point(0, 0)));
-            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(300, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1,1), SpriteEffects.None, new Point(0, 0)));
-            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 300), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1,1), SpriteEffects.None, new Point(0, 0)));
-            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), new Vector2(600, 400), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1,1), SpriteEffects.None, new Point(0, 0)));
+            player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"),Vector2.Zero, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), SpriteEffects.None, new Point(0,0),1,5);
+            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), SpriteEffects.None, new Point(0, 0), 1, 5));
+            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(300, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), SpriteEffects.None, new Point(0, 0), 1, 5));
+            spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 300), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), SpriteEffects.None, new Point(0, 0), 1, 5));
+            spriteList.Add(new EvadingSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), new Vector2(600, 400), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), 20, SpriteEffects.None, new Point(0, 0), 1, 5));
             base.LoadContent();
         }
         
@@ -86,6 +86,11 @@ namespace CP_1
             spriteBatch.End();
             
             base.Draw(gameTime);
+        }
+
+        public Vector2 GetPlayerPosition()
+        {
+            return player.GetPosition;
         }
     }
 }

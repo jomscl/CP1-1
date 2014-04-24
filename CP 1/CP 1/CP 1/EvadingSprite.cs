@@ -20,20 +20,28 @@ namespace CP_1
         bool evade = false;
 
         public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
             this.evasionRange = evasionRange;
         }
 
-        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, millisecondsPerFrame, SpEfect, sentido)
+        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
             this.evasionRange = evasionRange;
         }
+
+        //public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
+        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, millisecondsPerFrame, SpEfect, sentido, spriteManager, evasionSpeedModifier, evasionRange)
+        //{
+        //    this.spriteManager = spriteManager;
+        //    this.evasionSpeedModifier = evasionSpeedModifier;
+        //    this.evasionRange = evasionRange;
+        //}
 
         public override Vector2 direction
         {
@@ -47,25 +55,25 @@ namespace CP_1
 
             // Use the player position to move the sprite closer in
             // the X and/or Y directions
-            Vector2 player = spriteManager.GetPlayerPosition();
+            Vector2 pplayer = spriteManager.GetPlayerPosition();
 
             if (evade)
             {
                 // Move away from the player horizontally
-                if (player.X < position.X)
+                if (pplayer.X < position.X)
                     position.X += Math.Abs(speed.Y);
-                else if (player.X > position.X)
+                else if (pplayer.X > position.X)
                     position.X -= Math.Abs(speed.Y);
 
                 // Move away from the player vertically
-                if (player.Y < position.Y)
+                if (pplayer.Y < position.Y)
                     position.Y += Math.Abs(speed.X);
-                else if (player.Y > position.Y)
+                else if (pplayer.Y > position.Y)
                     position.Y -= Math.Abs(speed.X);
             }
             else
             {
-                if (Vector2.Distance(position, player) < evasionRange)
+                if (Vector2.Distance(position, pplayer) < evasionRange)
                 {
                     // Player is within evasion range,
                     // reverse direction and modify speed
