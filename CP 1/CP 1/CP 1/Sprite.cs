@@ -55,6 +55,7 @@ namespace CP_1
         //    this.evasionRange = evasionRange;
         //}
 
+        //
         public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
             int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
             int millisecondsPerFrame, string collisionCueName, SpriteEffects SpEfect, Point sentido)
@@ -68,6 +69,8 @@ namespace CP_1
             this.speed = speed;
             this.collisionCueName = collisionCueName;
             this.millisecondsPerFrame = millisecondsPerFrame;
+            this.sentido = sentido;
+            this.SpEfect = SpEfect;
         }
 
         public virtual void Update(GameTime gameTime, Rectangle clientBounds)

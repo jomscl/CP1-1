@@ -13,16 +13,32 @@ namespace CP_1
     {
         MouseState prevMouseState;
 
-        public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
-        { 
+        //public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
+        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
+        //{ 
         
+        //}
+
+        //public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido, float evasionSpeedModifier, int evasionRange)
+        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
+        //{
+        
+        //}
+
+        public UserControlledSprite(Texture2D textureImage, Vector2 position,
+       Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize,
+       Vector2 speed, string collisionCueName, SpriteEffects SpEfect, Point sentido)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame,
+            sheetSize, speed, collisionCueName,  SpEfect,  sentido)
+        {
         }
 
-        public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
+        public UserControlledSprite(Texture2D textureImage, Vector2 position,
+            Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize,
+            Vector2 speed, int millisecondsPerFrame, string collisionCueName, SpriteEffects SpEfect, Point sentido)
+            : base(textureImage, position, frameSize, collisionOffset, currentFrame,
+            sheetSize, speed, millisecondsPerFrame, collisionCueName, SpEfect, sentido)
         {
-        
         }
 
         public override Vector2 direction

@@ -19,21 +19,50 @@ namespace CP_1
         int evasionRange;
         bool evade = false;
 
-        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
+        //10 + 3
+        public EvadingSprite(Texture2D textureImage, Vector2 position,
+            Point frameSize, int collisionOffset, Point currentFrame,
+            Point sheetSize, Vector2 speed, string collisionCueName,
+            SpriteManager spriteManager, float evasionSpeedModifier,
+            int evasionRange, SpriteEffects SpEfect, Point sentido)
+            : base(textureImage, position, frameSize, collisionOffset,
+            currentFrame, sheetSize, speed, collisionCueName, SpEfect, sentido)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
             this.evasionRange = evasionRange;
         }
 
-        public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
-            : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
+        //11 + 3 
+        public EvadingSprite(Texture2D textureImage, Vector2 position,
+            Point frameSize, int collisionOffset, Point currentFrame,
+            Point sheetSize, Vector2 speed, int millisecondsPerFrame,
+            string collisionCueName, SpriteManager spriteManager,
+            float evasionSpeedModifier, int evasionRange,
+             SpriteEffects SpEfect, Point sentido)
+            : base(textureImage, position, frameSize, collisionOffset,
+            currentFrame, sheetSize, speed, millisecondsPerFrame,
+            collisionCueName,  SpEfect,  sentido)
         {
             this.spriteManager = spriteManager;
             this.evasionSpeedModifier = evasionSpeedModifier;
             this.evasionRange = evasionRange;
         }
+        //public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
+        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
+        //{
+        //    this.spriteManager = spriteManager;
+        //    this.evasionSpeedModifier = evasionSpeedModifier;
+        //    this.evasionRange = evasionRange;
+        //}
+
+        //public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
+        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
+        //{
+        //    this.spriteManager = spriteManager;
+        //    this.evasionSpeedModifier = evasionSpeedModifier;
+        //    this.evasionRange = evasionRange;
+        //}
 
         //public EvadingSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, int millisecondsPerFrame, SpriteEffects SpEfect, Point sentido, SpriteManager spriteManager, float evasionSpeedModifier, int evasionRange)
         //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, millisecondsPerFrame, SpEfect, sentido, spriteManager, evasionSpeedModifier, evasionRange)
