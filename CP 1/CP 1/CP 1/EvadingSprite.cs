@@ -90,15 +90,27 @@ namespace CP_1
             {
                 // Move away from the player horizontally
                 if (pplayer.X < position.X)
+                {
                     position.X += Math.Abs(speed.Y);
+                    Debug.WriteLine("Derecha");
+                }
                 else if (pplayer.X > position.X)
+                {
                     position.X -= Math.Abs(speed.Y);
+                    Debug.WriteLine("Izquierda");
+                }
 
                 // Move away from the player vertically
                 if (pplayer.Y < position.Y)
+                {
                     position.Y += Math.Abs(speed.X);
+                    Debug.WriteLine("Abajo");
+                }
                 else if (pplayer.Y > position.Y)
+                {
                     position.Y -= Math.Abs(speed.X);
+                    Debug.WriteLine("Arriba");
+                }
             }
             else
             {
