@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -9,6 +10,7 @@ namespace CP_1
 {
     abstract class Sprite
     {
+        
         Texture2D textureImage;
         protected Point frameSize;
         Point currentFrame;
@@ -135,7 +137,57 @@ namespace CP_1
             }
         }
 
+        public bool limitePantalla
+        {
+            get
+            {
+                bool clip = false;
+                int alto = Game.Window.ClientBounds.Height;
+                int ancho = Game.Window.ClientBounds.Width;
 
+                if (position.X < 10)
+                {
+                    position.X = 10;
+                    clip = true;
+                }
+                if (position.Y < 10)
+                {
+                    position.Y = 10;
+                    clip = true;
+                }
+                if (position.X < 10)
+                {
+                    position.X = 10;
+                    clip = true;
+                }
+                if (position.Y < 10)
+                {
+                    position.Y = 10;
+                    clip = true;
+                }
+                if (position.X > ancho - frameSize.X-10)
+                {
+                    position.X = ancho - frameSize.X;
+                    clip = true;
+                }
+                if (position.Y > alto - frameSize.Y-10)
+                {
+                    position.Y = alto - frameSize.Y;
+                    clip = true;
+                }
+                if (position.X > ancho - frameSize.X - 10)
+                {
+                    position.X = ancho - frameSize.X;
+                    clip = true;
+                }
+                if (position.Y > alto - frameSize.Y - 10)
+                {
+                    position.Y = alto - frameSize.Y;
+                    clip = true;
+                }
+                return clip;
+            }
+        }
 
     }
 }

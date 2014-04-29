@@ -91,25 +91,25 @@ namespace CP_1
                 // Move away from the player horizontally
                 if (pplayer.X < position.X)
                 {
-                    position.X += Math.Abs(speed.Y);
-                    Debug.WriteLine("Derecha");
+                    position.X += Math.Abs(speed.Y)+2;
+                   // Debug.WriteLine("Izquierda");
                 }
                 else if (pplayer.X > position.X)
                 {
                     position.X -= Math.Abs(speed.Y);
-                    Debug.WriteLine("Izquierda");
+                   // Debug.WriteLine("Derecha");
                 }
 
                 // Move away from the player vertically
                 if (pplayer.Y < position.Y)
                 {
-                    position.Y += Math.Abs(speed.X);
-                    Debug.WriteLine("Abajo");
+                    position.Y += Math.Abs(speed.X)+2;
+                   // Debug.WriteLine("Abajo");
                 }
                 else if (pplayer.Y > position.Y)
                 {
                     position.Y -= Math.Abs(speed.X);
-                    Debug.WriteLine("Arriba");
+                    //Debug.WriteLine("Arriba");
                 }
             }
             else
@@ -122,6 +122,9 @@ namespace CP_1
                     evade = true;
                 }
             }
+
+            // revisión de fuera de pantalla
+            if(limitePantalla);
 
             base.Update(gameTime, clientBounds);
         }
