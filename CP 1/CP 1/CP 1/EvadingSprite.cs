@@ -126,6 +126,10 @@ namespace CP_1
             // revisión de fuera de pantalla
             if(limitePantalla);
 
+            // calculo de sentido
+            if (direction.X > 0) { sentido.X = 0; } else { sentido.X = 1; }
+            if (direction.Y > 0) { sentido.Y = 0; } else { sentido.Y = 1; }
+
             base.Update(gameTime, clientBounds);
         }
 

@@ -11,8 +11,10 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
 
+
 namespace CP_1
 {
+
     /// <summary>
     /// This is the main type for your game
     /// </summary>
@@ -20,15 +22,16 @@ namespace CP_1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        int alto = 690;
+        int ancho = 1024;
         SpriteManager spriteManager;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 690;
-            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = alto;
+            graphics.PreferredBackBufferWidth = ancho;
         }
 
         /// <summary>

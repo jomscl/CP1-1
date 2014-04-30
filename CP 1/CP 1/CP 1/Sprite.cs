@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace CP_1
 {
     abstract class Sprite
     {
-        
+
+        int alto = 690;
+        int ancho = 1024;
         Texture2D textureImage;
         protected Point frameSize;
         Point currentFrame;
@@ -142,8 +148,8 @@ namespace CP_1
             get
             {
                 bool clip = false;
-                int alto = Game.Window.ClientBounds.Height;
-                int ancho = Game.Window.ClientBounds.Width;
+                //int alto = Game.Window.ClientBounds.Height;
+                //int ancho = Game.Window.ClientBounds.Width;
 
                 if (position.X < 10)
                 {
@@ -165,7 +171,7 @@ namespace CP_1
                     position.Y = 10;
                     clip = true;
                 }
-                if (position.X > ancho - frameSize.X-10)
+                if (position.X > ancho - frameSize.X - 10)
                 {
                     position.X = ancho - frameSize.X;
                     clip = true;
