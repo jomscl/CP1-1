@@ -23,7 +23,7 @@ namespace CP_1
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         int alto = 690;
-        int ancho = 1024;
+        int ancho = 1000;
         SpriteManager spriteManager;
 
         public Game1()
