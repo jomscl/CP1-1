@@ -80,8 +80,14 @@ namespace CP_1
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
             // First, move the sprite along its direction vector
-            position += speed;
+            //position += speed;
 
+            // inicio deteccion de sentido optimo para arrancar
+            if (!evade)
+            {
+                position = direccionEscape(position, clientBounds);
+            }
+           
             // Use the player position to move the sprite closer in
             // the X and/or Y directions
             Vector2 pplayer = spriteManager.GetPlayerPosition();
@@ -126,7 +132,7 @@ namespace CP_1
             // revisión de fuera de pantalla
             if(limitePantalla(clientBounds));
 
-            // calculo de sentido
+            // calculo de sentido, no funciona bien!
             if (speed.X > 0) { sentido.X = 0; } else { sentido.X = 1; }
             if (speed.Y > 0) { sentido.Y = 0; } else { sentido.Y = 1; }
 
@@ -138,36 +144,38 @@ namespace CP_1
             get { return sentido; }
         }
 
-        public bool limitePantalla(Rectangle clientBounds)
-        {
-            bool clip = false;
-            //int alto = Game.Window.ClientBounds.Height;
-            //int ancho = Game.Window.ClientBounds.Width;
+        //public bool limitePantalla(Rectangle clientBounds)
+        //{
+        //    bool clip = false;
+        //    //int alto = Game.Window.ClientBounds.Height;
+        //    //int ancho = Game.Window.ClientBounds.Width;
 
-            if (position.X < 10)
-            {
-                position.X = 10;
-                clip = true;
-            }
-            if (position.Y < 10)
-            {
-                position.Y = 10;
-                clip = true;
-            }
+        //    if (position.X < 10)
+        //    {
+        //        position.X = 10;
+        //        clip = true;
+        //    }
+        //    if (position.Y < 10)
+        //    {
+        //        position.Y = 10;
+        //        clip = true;
+        //    }
           
-            if (position.X > clientBounds.Width - frameSize.X - 10)
-            {
-                position.X = clientBounds.Width - frameSize.X -10;
-                clip = true;
-            }
-            if (position.Y > clientBounds.Height - frameSize.Y - 10)
-            {
-                position.Y = clientBounds.Height - frameSize.Y - 10;
-                clip = true;
-            }
+        //    if (position.X > clientBounds.Width - frameSize.X - 10)
+        //    {
+        //        position.X = clientBounds.Width - frameSize.X -10;
+        //        clip = true;
+        //    }
+        //    if (position.Y > clientBounds.Height - frameSize.Y - 10)
+        //    {
+        //        position.Y = clientBounds.Height - frameSize.Y - 10;
+        //        clip = true;
+        //    }
            
-            return clip;
+        //    return clip;
             
-        }
+        //}
+
+       
     }
 }

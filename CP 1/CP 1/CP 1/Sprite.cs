@@ -143,57 +143,73 @@ namespace CP_1
             }
         }
 
-        //public bool limitePantalla
-        //{
-        //    get
-        //    {
-        //        bool clip = false;
-        //        //int alto = Game.Window.ClientBounds.Height;
-        //        //int ancho = Game.Window.ClientBounds.Width;
+      
+        public Vector2 direccionEscape(Vector2 position, Rectangle clientBounds)
+        {
+            Vector2 salida;
+            salida = position;
 
-        //        if (position.X < 10)
-        //        {
-        //            position.X = 10;
-        //            clip = true;
-        //        }
-        //        if (position.Y < 10)
-        //        {
-        //            position.Y = 10;
-        //            clip = true;
-        //        }
-        //        if (position.X < 10)
-        //        {
-        //            position.X = 10;
-        //            clip = true;
-        //        }
-        //        if (position.Y < 10)
-        //        {
-        //            position.Y = 10;
-        //            clip = true;
-        //        }
-        //        if (position.X > ancho - frameSize.X - 10)
-        //        {
-        //            position.X = ancho - frameSize.X;
-        //            clip = true;
-        //        }
-        //        if (position.Y > alto - frameSize.Y-10)
-        //        {
-        //            position.Y = alto - frameSize.Y;
-        //            clip = true;
-        //        }
-        //        if (position.X > ancho - frameSize.X - 15)
-        //        {
-        //            position.X = ancho - frameSize.X -15;
-        //            clip = true;
-        //        }
-        //        if (position.Y > alto - frameSize.Y - 15)
-        //        {
-        //            position.Y = alto - frameSize.Y-15;
-        //            clip = true;
-        //        }
-        //        return clip;
-        //    }
-        //}
+            // calculo de velocidad
+            float velAbs;
+            float dsi = 0;
+            float dsd = 0;
+            float dii = 0;
+            float did = 0;
+            float dmin = 0;
+            Vector2 objetivo;
 
+            // velocidad vectorial
+            velAbs = (float)Math.Sqrt(Math.Pow(direction.X, 2) + Math.Pow(direction.Y, 2));
+
+            // calculo de la distancia actual a alguno de las esquinas
+            dsi = Vector2.Distance(position, new Vector2(0, 0));
+            dsd = Vector2.Distance(position, new Vector2(clientBounds.Width, 0));
+            dii = Vector2.Distance(position, new Vector2(0, clientBounds.Height));
+            did = Vector2.Distance(position, new Vector2(clientBounds.Width, clientBounds.Height));
+
+            // determinar cual esquina es la mas cercana
+            dmin = dsi; objetivo = new Vector2(0, 0);
+            if (dmin > dsd) { dmin = dsd; objetivo = new Vector2(clientBounds.Width, 0); }
+            if (dmin > dii) { dmin = dii; objetivo = new Vector2(0, clientBounds.Height); }
+            if (dmin > did) { dmin = did; objetivo = new Vector2(clientBounds.Width, clientBounds.Height); }
+            //Debug.Print("sss "+dmin);
+            // ir a la esquina mas cercana
+            salida.X += (objetivo.X - position.X) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
+            salida.Y += (objetivo.Y - position.Y) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
+
+            return salida;
+        }
+
+        public bool limitePantalla(Rectangle clientBounds)
+        {
+            bool clip = false;
+            //int alto = Game.Window.ClientBounds.Height;
+            //int ancho = Game.Window.ClientBounds.Width;
+
+            if (position.X < 10)
+            {
+                position.X = 10;
+                clip = true;
+            }
+            if (position.Y < 10)
+            {
+                position.Y = 10;
+                clip = true;
+            }
+
+            if (position.X > clientBounds.Width - frameSize.X - 10)
+            {
+                position.X = clientBounds.Width - frameSize.X - 10;
+                clip = true;
+            }
+            if (position.Y > clientBounds.Height - frameSize.Y - 10)
+            {
+                position.Y = clientBounds.Height - frameSize.Y - 10;
+                clip = true;
+            }
+
+            return clip;
+
+        }
     }
 }
