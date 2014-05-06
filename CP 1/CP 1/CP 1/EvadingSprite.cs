@@ -131,6 +131,7 @@ namespace CP_1
 
             // revisión de fuera de pantalla
             if(limitePantalla(clientBounds));
+            if (paredCasa(clientBounds)) ;
 
             // calculo de sentido, no funciona bien!
             if (speed.X > 0) { sentido.X = 0; } else { sentido.X = 1; }

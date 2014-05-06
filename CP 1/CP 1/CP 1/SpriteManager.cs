@@ -23,19 +23,14 @@ namespace CP_1
         List<Sprite> spriteList = new List<Sprite>();
 
        
-        //Vector2[] casas = { new Vector2(50 , 53), new Vector2(50 , 118), new Vector2(50 , 183), new Vector2(50 , 248), new Vector2(50 , 313), new Vector2(50 , 378), new Vector2(50 , 443), new Vector2(50 , 508), new Vector2(50 , 573), new Vector2(50 , 638), 
-        //                  new Vector2(110 , 638), new Vector2(170 , 638), new Vector2(230 , 638), new Vector2(290 , 638), 	new Vector2(350 , 638), 	new Vector2(410 , 638), 	new Vector2(470 , 638), 	new Vector2(530 , 638), 	new Vector2(590 , 638), 	new Vector2(650 , 638), 	new Vector2(710 , 638), 	new Vector2(770 , 638), 	new Vector2(830 , 638), 	new Vector2(890 , 638), 	new Vector2(950 , 638), 	
-        //                  new Vector2(950 , 53),  new Vector2(950 , 118), new Vector2(950 , 183), new Vector2(950 , 248), new Vector2(950 , 313), new Vector2(950 , 378), new Vector2(950 , 443), new Vector2(950 , 508), new Vector2(950 , 573), 
-        //                  new Vector2(110 , 53), 	new Vector2(170 , 53), 	new Vector2(230 , 53), 	new Vector2(290 , 53), 	new Vector2(350 , 53), 	new Vector2(410 , 53), 	new Vector2(470 , 53), 	new Vector2(530 , 53), 	new Vector2(590 , 53), 	new Vector2(650 , 53), 	new Vector2(710 , 53), 	new Vector2(770 , 53), 	new Vector2(830 , 53), 	new Vector2(890 , 53)             
-        //                };
-
-        Vector2[] casas = {
-                              new Vector2(96 , 86), new Vector2(96 , 129), new Vector2(96 , 172), new Vector2(96 , 215), new Vector2(96 , 258), new Vector2(96 , 301), new Vector2(96 , 344), new Vector2(96 , 387), new Vector2(96 , 430), new Vector2(96 , 473), new Vector2(96 , 559), 
+       public static Vector2[] casas = {
+                              new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(06 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), new Vector2(0 , 559), 
                               new Vector2(144 , 559), new Vector2(192 , 559), new Vector2(240 , 559), new Vector2(288 , 559), new Vector2(336 , 559), new Vector2(384 , 559), new Vector2(432 , 559), new Vector2(480 , 559), new Vector2(528 , 559), new Vector2(576 , 559), new Vector2(624 , 559), new Vector2(672 , 559), new Vector2(720 , 559), new Vector2(768 , 559), new Vector2(816 , 559), 
                               new Vector2(912 , 473), new Vector2(912 , 430), new Vector2(912 , 387), new Vector2(912 , 344), new Vector2(912 , 301), new Vector2(912 , 258), new Vector2(912 , 215), new Vector2(912 , 172), new Vector2(912 , 129), new Vector2(912 , 86), 
                               new Vector2(816 , 0), new Vector2(768 , 0), new Vector2(720 , 0), new Vector2(672 , 0), new Vector2(624 , 0), new Vector2(576 , 0), new Vector2(528 , 0), new Vector2(480 , 0), new Vector2(432 , 0), new Vector2(384 , 0), new Vector2(336 , 0), new Vector2(288 , 0), new Vector2(240 , 0), new Vector2(192 , 0), new Vector2(144 , 0), new Vector2(96 , 0), 
                           };
-
+        public static Vector2[] casas2 = {new Vector2(0, 0), new Vector2(912, 0), new Vector2(0, 559), new Vector2(912, 559) };
+        public static Vector2[] salidas = {new Vector2(0 , 43), 	new Vector2(912 , 43), new Vector2(0 , 516), 	new Vector2(912 , 516), new Vector2(48 , 0), 	new Vector2(864 , 0), new Vector2(48 , 559), new Vector2(864 , 559) };
 
         public SpriteManager(Game game)
             : base(game)
@@ -61,16 +56,21 @@ namespace CP_1
         
         protected override void LoadContent( )
         {
+            // posicion inicial del npc
             Random random = new Random();
             int casa = random.Next(0, casas.Length);
+            Vector2 npc = casas[casa];
+            if (npc.X < 100) { npc.X += 50; }
+            if (npc.Y < 100) { npc.Y += 50; }
+            if (npc.X >100) { npc.X -= 50; }
+            if (npc.Y > 100) { npc.Y -= 50; }
 
-            
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"),Vector2.Zero, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), "", SpriteEffects.None, new Point(0,0));
             //spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
            // spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(300, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
           //  spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 300), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
-            spriteList.Add(new EvadingSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), casas[casa], new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", this, .75f, 150, SpriteEffects.None, new Point(0, 0)));
+            spriteList.Add(new EvadingSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), npc, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", this, .75f, 150, SpriteEffects.None, new Point(0, 0)));
 
             //player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"), Vector2.Zero, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), SpriteEffects.None, new Point(0, 0), 1, 5);
             //spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), SpriteEffects.None, new Point(0, 0), 1, 5));

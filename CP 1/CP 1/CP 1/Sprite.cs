@@ -209,7 +209,34 @@ namespace CP_1
             }
 
             return clip;
+        }
 
+        public bool paredCasa(Rectangle clientBounds)
+        {
+            bool clip = false;
+            Rectangle rtemp;
+            
+            // casas principales
+            for (int i = 0; i < SpriteManager.casas.Length; i++)
+            {
+                rtemp = new Rectangle((int)SpriteManager.casas[i].X,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
+                if (rtemp.Intersects(this.collisionRect)){
+                    position -= speed;
+                    clip=true;
+                }
+            }
+
+            // casas esquina
+            for (int i = 0; i < SpriteManager.casas2.Length; i++)
+            {
+                rtemp = new Rectangle((int)SpriteManager.casas2[i].X, (int)SpriteManager.casas[i].Y, 43, 48); // parametrizar estos valores
+                if (rtemp.Intersects(this.collisionRect))
+                {
+                    position -= speed;
+                    clip = true;
+                }
+            }
+            return clip;
         }
     }
 }
