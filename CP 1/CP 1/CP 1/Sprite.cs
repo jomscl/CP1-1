@@ -15,7 +15,7 @@ namespace CP_1
     abstract class Sprite
     {
 
-      //  int alto = 690;
+        //  int alto = 690;
        // int ancho = 1024;
         Texture2D textureImage;
         protected Point frameSize;
@@ -32,6 +32,7 @@ namespace CP_1
         protected float evasionSpeedModifier;
         protected int evasionRange;
         public string collisionCueName { get; private set; }
+        public int velAbs=5;
 
         //public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange) 
         //    : this(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, defaultMillisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
@@ -47,23 +48,7 @@ namespace CP_1
         {
         }
 
-        //public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido, float evasionSpeedModifier, int evasionRange)
-        //{
-        //    this.textureImage = textureImage;
-        //    this.position = position;
-        //    this.frameSize = frameSize;
-        //    this.collisionOffset = collisionOffset;
-        //    this.currentFrame = currentFrame;
-        //    this.sheetSize = sheetSize;
-        //    this.speed = speed;
-        //    this.millisecondsPerFrame = millisecondsPerFrame;
-        //    this.SpEfect = SpEfect;
-        //    this.sentido = sentido;
-        //    this.evasionSpeedModifier = evasionSpeedModifier;
-        //    this.evasionRange = evasionRange;
-        //}
-
-        //
+         //
         public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
             int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
             int millisecondsPerFrame, string collisionCueName, SpriteEffects SpEfect, Point sentido)
@@ -144,13 +129,13 @@ namespace CP_1
         }
 
       
-        public Vector2 direccionEscape(Vector2 position, Rectangle clientBounds)
+        public Vector2 direccionEscape(Rectangle clientBounds)
         {
             Vector2 salida;
-            salida = position;
+            salida = speed;
 
             // calculo de velocidad
-            float velAbs;
+            //float velAbs;
             float dsi = 0;
             float dsd = 0;
             float dii = 0;
@@ -159,8 +144,8 @@ namespace CP_1
             Vector2 objetivo;
 
             // velocidad vectorial
-            velAbs = (float)Math.Sqrt(Math.Pow(direction.X, 2) + Math.Pow(direction.Y, 2));
-
+            //velAbs = (float)Math.Sqrt(Math.Pow(direction.X, 2) + Math.Pow(direction.Y, 2));
+            velAbs = 3;
             // calculo de la distancia actual a alguno de las esquinas
             dsi = Vector2.Distance(position, new Vector2(0, 0));
             dsd = Vector2.Distance(position, new Vector2(clientBounds.Width, 0));
@@ -174,56 +159,69 @@ namespace CP_1
             if (dmin > did) { dmin = did; objetivo = new Vector2(clientBounds.Width, clientBounds.Height); }
             //Debug.Print("sss "+dmin);
             // ir a la esquina mas cercana
-            salida.X += (objetivo.X - position.X) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
-            salida.Y += (objetivo.Y - position.Y) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
+            salida.X = (objetivo.X - position.X) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
+            salida.Y = (objetivo.Y - position.Y) / (int)Math.Sqrt(Math.Pow(objetivo.X - position.X, 2) + Math.Pow(objetivo.Y - position.Y, 2)) * velAbs;
 
             return salida;
         }
 
-        public bool limitePantalla(Rectangle clientBounds)
+        public void limitePantalla(Rectangle clientBounds)
         {
-            bool clip = false;
+           
             //int alto = Game.Window.ClientBounds.Height;
             //int ancho = Game.Window.ClientBounds.Width;
 
             if (position.X < 10)
             {
                 position.X = 10;
-                clip = true;
+               
             }
             if (position.Y < 10)
             {
                 position.Y = 10;
-                clip = true;
+               
             }
 
             if (position.X > clientBounds.Width - frameSize.X - 10)
             {
                 position.X = clientBounds.Width - frameSize.X - 10;
-                clip = true;
+                
             }
             if (position.Y > clientBounds.Height - frameSize.Y - 10)
             {
                 position.Y = clientBounds.Height - frameSize.Y - 10;
-                clip = true;
+                
             }
 
-            return clip;
+           
         }
 
         public bool paredCasa(Rectangle clientBounds)
         {
-            bool clip = false;
+           
             Rectangle rtemp;
-            Rectangle intersecion;
-
+            bool clip = false;
             // casas principales
             for (int i = 0; i < SpriteManager.casas.Length; i++)
             {
                 rtemp = new Rectangle((int)SpriteManager.casas[i].X,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
                 if (rtemp.Intersects(this.collisionRect)){
-                    position -= speed*2;
-                    clip=true;
+                    // detectar donde se chocó.
+                    if ((i>=0 && i <= 9) || (i>=26 && i <= 35)){
+                        // contacto con casa vertical
+                        position.X -= speed.X;
+                        speed.X = 0;
+                        if (speed.Y >= 0) { speed.Y = -velAbs; } else { speed.Y = velAbs; }
+                    }
+                    else {
+                        // contacto con casa Horizontal
+                        position.Y -= speed.Y;
+                        speed.Y = 0;
+                        if (speed.X >= 0) { speed.X = -velAbs; } else { speed.X = velAbs; }
+                    }
+                    clip = true;
+                    //position -= speed*2;
+                   
                 }
             }
 
@@ -233,8 +231,8 @@ namespace CP_1
                 rtemp = new Rectangle((int)SpriteManager.casas2[i].X, (int)SpriteManager.casas[i].Y, 43, 48); // parametrizar estos valores
                 if (rtemp.Intersects(this.collisionRect))
                 {
-                    position -= speed;
-                    clip = true;
+                   // position -= speed*2;
+                   
                 }
             }
             return clip;

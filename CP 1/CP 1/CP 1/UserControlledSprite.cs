@@ -13,19 +13,7 @@ namespace CP_1
     {
         MouseState prevMouseState;
 
-        //public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange)
-        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, sentido, evasionSpeedModifier, evasionRange)
-        //{ 
-        
-        //}
-
-        //public UserControlledSprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, int millisecondsPerFrame, Point sentido, float evasionSpeedModifier, int evasionRange)
-        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, millisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
-        //{
-        
-        //}
-
-        public UserControlledSprite(Texture2D textureImage, Vector2 position,
+       public UserControlledSprite(Texture2D textureImage, Vector2 position,
        Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize,
        Vector2 speed, string collisionCueName, SpriteEffects SpEfect, Point sentido)
             : base(textureImage, position, frameSize, collisionOffset, currentFrame,
@@ -76,16 +64,9 @@ namespace CP_1
             }
             prevMouseState = currMouseState;
             // If sprite is off the screen, move it back within the game window
-            if (limitePantalla(clientBounds)) ;
-
-            //if (position.X < 0)
-            //    position.X = 0;
-            //if (position.Y < 0)
-            //    position.Y = 0;
-            //if (position.X > clientBounds.Width - frameSize.X)
-            //    position.X = clientBounds.Width - frameSize.X;
-            //if (position.Y > clientBounds.Height - frameSize.Y)
-            //    position.Y = clientBounds.Height - frameSize.Y;
+            limitePantalla(clientBounds) ;
+            paredCasa(clientBounds);
+     
             base.Update(gameTime, clientBounds);
 
             // calculo de sentido
