@@ -215,13 +215,14 @@ namespace CP_1
         {
             bool clip = false;
             Rectangle rtemp;
-            
+            Rectangle intersecion;
+
             // casas principales
             for (int i = 0; i < SpriteManager.casas.Length; i++)
             {
                 rtemp = new Rectangle((int)SpriteManager.casas[i].X,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
                 if (rtemp.Intersects(this.collisionRect)){
-                    position -= speed;
+                    position -= speed*2;
                     clip=true;
                 }
             }
