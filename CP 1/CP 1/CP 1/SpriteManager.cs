@@ -22,13 +22,20 @@ namespace CP_1
         UserControlledSprite player;
         List<Sprite> spriteList = new List<Sprite>();
 
-       
-       public static Vector2[] casas = {
-                              new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(06 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), new Vector2(0 , 559), 
-                              new Vector2(144 , 559), new Vector2(192 , 559), new Vector2(240 , 559), new Vector2(288 , 559), new Vector2(336 , 559), new Vector2(384 , 559), new Vector2(432 , 559), new Vector2(480 , 559), new Vector2(528 , 559), new Vector2(576 , 559), new Vector2(624 , 559), new Vector2(672 , 559), new Vector2(720 , 559), new Vector2(768 , 559), new Vector2(816 , 559), 
-                              new Vector2(912 , 473), new Vector2(912 , 430), new Vector2(912 , 387), new Vector2(912 , 344), new Vector2(912 , 301), new Vector2(912 , 258), new Vector2(912 , 215), new Vector2(912 , 172), new Vector2(912 , 129), new Vector2(912 , 86), 
-                              new Vector2(816 , 0), new Vector2(768 , 0), new Vector2(720 , 0), new Vector2(672 , 0), new Vector2(624 , 0), new Vector2(576 , 0), new Vector2(528 , 0), new Vector2(480 , 0), new Vector2(432 , 0), new Vector2(384 , 0), new Vector2(336 , 0), new Vector2(288 , 0), new Vector2(240 , 0), new Vector2(192 , 0), new Vector2(144 , 0), new Vector2(96 , 0), 
-                          };
+
+        public static Vector2[] casas ={
+                                        new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(0 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), 
+                                        new Vector2(96 , 559), new Vector2(144 , 559), new Vector2(192 , 559), new Vector2(240 , 559), new Vector2(288 , 559), new Vector2(336 , 559), new Vector2(384 , 559), new Vector2(432 , 559), new Vector2(480 , 559), new Vector2(528 , 559), new Vector2(576 , 559), new Vector2(624 , 559), new Vector2(672 , 559), new Vector2(720 , 559), new Vector2(768 , 559), new Vector2(816 , 559), 
+                                        new Vector2(912 , 473), new Vector2(912 , 430), new Vector2(912 , 387), new Vector2(912 , 344), new Vector2(912 , 301), new Vector2(912 , 258), new Vector2(912 , 215), new Vector2(912 , 172), new Vector2(912 , 129), new Vector2(912 , 86), 
+                                        new Vector2(816 , 0), new Vector2(768 , 0), new Vector2(720 , 0), new Vector2(672 , 0), new Vector2(624 , 0), new Vector2(576 , 0), new Vector2(528 , 0), new Vector2(480 , 0), new Vector2(432 , 0), new Vector2(384 , 0), new Vector2(336 , 0), new Vector2(288 , 0), new Vector2(240 , 0), new Vector2(192 , 0), new Vector2(144 , 0), new Vector2(96 , 0)
+                                     };
+        
+        //public static Vector2[] casas = {
+       //                       new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(06 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), new Vector2(0 , 559), 
+       //                       new Vector2(144 , 559), new Vector2(192 , 559), new Vector2(240 , 559), new Vector2(288 , 559), new Vector2(336 , 559), new Vector2(384 , 559), new Vector2(432 , 559), new Vector2(480 , 559), new Vector2(528 , 559), new Vector2(576 , 559), new Vector2(624 , 559), new Vector2(672 , 559), new Vector2(720 , 559), new Vector2(768 , 559), new Vector2(816 , 559), 
+       //                       new Vector2(912 , 473), new Vector2(912 , 430), new Vector2(912 , 387), new Vector2(912 , 344), new Vector2(912 , 301), new Vector2(912 , 258), new Vector2(912 , 215), new Vector2(912 , 172), new Vector2(912 , 129), new Vector2(912 , 86), 
+       //                       new Vector2(816 , 0), new Vector2(768 , 0), new Vector2(720 , 0), new Vector2(672 , 0), new Vector2(624 , 0), new Vector2(576 , 0), new Vector2(528 , 0), new Vector2(480 , 0), new Vector2(432 , 0), new Vector2(384 , 0), new Vector2(336 , 0), new Vector2(288 , 0), new Vector2(240 , 0), new Vector2(192 , 0), new Vector2(144 , 0), new Vector2(96 , 0), 
+       //                   };
         public static Vector2[] casas2 = {new Vector2(0, 0), new Vector2(912, 0), new Vector2(0, 559), new Vector2(912, 559) };
         public static Vector2[] salidas = {new Vector2(0 , 43), 	new Vector2(912 , 43), new Vector2(0 , 516), 	new Vector2(912 , 516), new Vector2(48 , 0), 	new Vector2(864 , 0), new Vector2(48 , 559), new Vector2(864 , 559) };
 
@@ -60,10 +67,10 @@ namespace CP_1
             Random random = new Random();
             int casa = random.Next(0, casas.Length);
             Vector2 npc = casas[casa];
-            if (npc.X < 100) { npc.X += 50; }
-            if (npc.Y < 100) { npc.Y += 50; }
-            if (npc.X >100) { npc.X -= 50; }
-            if (npc.Y > 100) { npc.Y -= 50; }
+            if (npc.X < 100) { npc.X += 350; }
+            if (npc.Y < 100) { npc.Y += 350; }
+            if (npc.X >100) { npc.X -= 350; }
+            if (npc.Y > 100) { npc.Y -= 350; }
 
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"),Vector2.Zero, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), "", SpriteEffects.None, new Point(0,0));
