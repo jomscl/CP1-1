@@ -15,7 +15,7 @@ namespace CP_1
     abstract class Sprite
     {
 
-        //  int alto = 690;
+       //  int alto = 690;
        // int ancho = 1024;
         Texture2D textureImage;
         protected Point frameSize;

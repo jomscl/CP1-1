@@ -22,6 +22,7 @@ namespace CP_1
         UserControlledSprite player;
         List<Sprite> spriteList = new List<Sprite>();
 
+        List<Casas> listaCasas = new List<Casas>();
 
         public static Vector2[] casas ={
                                         new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(0 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), 
@@ -63,6 +64,9 @@ namespace CP_1
         
         protected override void LoadContent( )
         {
+            // creación de las casas
+            listaCasas.Add(new Casas(0,new Vector2(0,0),30,40,'v',new Point(0,0),new Vector2(-3,4)));
+            
             // posicion inicial del npc
             Random random = new Random();
             int casa = random.Next(0, casas.Length);

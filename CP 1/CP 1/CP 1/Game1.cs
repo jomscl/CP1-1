@@ -25,6 +25,7 @@ namespace CP_1
         int alto = 690;
         int ancho = 1000;
         SpriteManager spriteManager;
+       // Casas casas;
 
         public Game1()
         {
