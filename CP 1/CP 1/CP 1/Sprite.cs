@@ -15,7 +15,11 @@ namespace CP_1
     abstract class Sprite
     {
 
-       //  int alto = 690;
+        // Save a reference to the sprite manager to
+        // use to get the player position
+        SpriteManager spriteManager;
+        
+        //  int alto = 690;
        // int ancho = 1024;
         Texture2D textureImage;
         protected Point frameSize;
@@ -199,42 +203,60 @@ namespace CP_1
         public bool paredCasa(Rectangle clientBounds)
         {
            
-            Rectangle rtemp;
             bool clip = false;
-            // casas principales
-            for (int i = 0; i < SpriteManager.casas.Length; i++)
+            
+            // versión nueva
+
+            // ciclo principal
+            for (int i = 0; i < spriteManager.cantidadCasas(); i++)
             {
-                rtemp = new Rectangle((int)SpriteManager.casas[i].X,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
-                if (rtemp.Intersects(this.collisionRect)){
-                    // detectar donde se chocó.
-                    if ((i>=0 && i <= 9) || (i>=26 && i <= 35)){
-                        // contacto con casa vertical
-                        position.X -= speed.X;
-                        speed.X = 0;
-                        if (speed.Y >= 0) { speed.Y = -velAbs; } else { speed.Y = velAbs; }
+                Casas2 c = spriteManager.leeCasas(i);
+                if (c.GetTipo == 'c')
+                {
+                    if (c.collisionRect.Intersects(this.collisionRect))
+                    {
+                        this.speed = c.GetArranque;
+                        clip = true;
                     }
-                    else {
-                        // contacto con casa Horizontal
-                        position.Y -= speed.Y;
-                        speed.Y = 0;
-                        if (speed.X >= 0) { speed.X = -velAbs; } else { speed.X = velAbs; }
-                    }
-                    clip = true;
-                    //position -= speed*2;
-                   
                 }
             }
 
-            // casas esquina
-            for (int i = 0; i < SpriteManager.casas2.Length; i++)
-            {
-                rtemp = new Rectangle((int)SpriteManager.casas2[i].X, (int)SpriteManager.casas[i].Y, 43, 48); // parametrizar estos valores
-                if (rtemp.Intersects(this.collisionRect))
-                {
-                   // position -= speed*2;
+            // versión antigua
+            //Rectangle rtemp;
+            //// casas principales
+            //for (int i = 0; i < SpriteManager.listaCasas.Count; i++)
+            //{
+            //    rtemp = new Rectangle((int)SpriteManager.listaCasas.,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
+            //    if (rtemp.Intersects(this.collisionRect)){
+            //        // detectar donde se chocó.
+            //        if ((i>=0 && i <= 9) || (i>=26 && i <= 35)){
+            //            // contacto con casa vertical
+            //            position.X -= speed.X;
+            //            speed.X = 0;
+            //            if (speed.Y >= 0) { speed.Y = -velAbs; } else { speed.Y = velAbs; }
+            //        }
+            //        else {
+            //            // contacto con casa Horizontal
+            //            position.Y -= speed.Y;
+            //            speed.Y = 0;
+            //            if (speed.X >= 0) { speed.X = -velAbs; } else { speed.X = velAbs; }
+            //        }
+            //        clip = true;
+            //        //position -= speed*2;
                    
-                }
-            }
+            //    }
+            //}
+
+            //// casas esquina
+            //for (int i = 0; i < SpriteManager.listaCasas.Count; i++)
+            //{
+            //    rtemp = new Rectangle((int)SpriteManager.casas2[i].X, (int)SpriteManager.casas[i].Y, 43, 48); // parametrizar estos valores
+            //    if (rtemp.Intersects(this.collisionRect))
+            //    {
+            //       // position -= speed*2;
+                   
+            //    }
+            //}
             return clip;
         }
     }

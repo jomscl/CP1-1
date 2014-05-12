@@ -15,7 +15,7 @@ namespace CP_1
     /// <summary>
     /// This is a game component that implements IUpdateable.
     /// </summary>
-    class Casas : Sprite //Microsoft.Xna.Framework.GameComponent
+    class Casas //Microsoft.Xna.Framework.GameComponent
     {
 
         int numero;
@@ -26,25 +26,27 @@ namespace CP_1
         Point indice;
         Vector2 arranque;
 
-        public Casas(int numero, Vector2 posicion, int alto, int ancho, char orientacion, Point indice, Vector2 arranque)
-            : this (numero, posicion, alto, ancho, orientacion, indice, arranque)
-        {
-            this.numero = numero;
-            this.posicion = posicion;
-            this.ancho = ancho;
-            this.alto = alto;
-            this.orientación = orientacion;
-            this.indice = indice;
-            this.arranque = arranque;
+        SpriteManager spriteManager;
 
-        }
+        //public Casas(int numero, Vector2 posicion, int alto, int ancho, char orientacion, Point indice, Vector2 arranque)
+        //    : this(numero, posicion, alto, ancho, orientacion, indice, arranque)
+        //{
+        //    //this.numero = numero;
+        //    //this.posicion = posicion;
+        //    //this.ancho = ancho;
+        //    //this.alto = alto;
+        //    //this.orientación = orientacion;
+        //    //this.indice = indice;
+        //    //this.arranque = arranque;
+        //    this.spriteManager = spriteManager;
+        //}
 
-        public Casas(Game game)
-            : base(game)
-        {
-            // TODO: Construct any child components here
+        //public Casas(Game game)
+        //    : base(game)
+        //{
+        //    // TODO: Construct any child components here
 
-        }
+        //}
 
         /// <summary>
         /// Allows the game component to perform any initialization it needs to before starting

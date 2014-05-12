@@ -73,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomatedSprite.cs" />
-    <Compile Include="Casas.cs" />
+    <Compile Include="Casas2.cs" />
     <Compile Include="EvadingSprite.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
