@@ -22,7 +22,7 @@ namespace CP_1
         UserControlledSprite player;
         List<Sprite> spriteList = new List<Sprite>();
 
-        public static List<Casas2> listaCasas = new List<Casas2>();
+        List<Casas2> listaCasas = new List<Casas2>();
 
         //public static Vector2[] casas ={
         //                                new Vector2(0 , 86), new Vector2(0 , 129), new Vector2(0 , 172), new Vector2(0 , 215), new Vector2(0 , 258), new Vector2(0 , 301), new Vector2(0 , 344), new Vector2(0 , 387), new Vector2(0 , 430), new Vector2(0 , 473), 
@@ -215,14 +215,30 @@ namespace CP_1
             return player.GetPosition;
         }
 
-        public int cantidadCasas()
+        public int cantidadCasas(int i=0)
         {
-            return listaCasas.Count;
+            return listaCasas.Count; 
         }
 
-        public Casas2 leeCasas(int i)
+        public Vector2 arranqueCasa(int i)
         {
-            return listaCasas[i];
+            return listaCasas[i].GetArranque;
         }
+
+        public Vector2 posicionCasa(int i)
+        {
+            return listaCasas[i].GetPosition;
+        }
+
+        public char tipoCasa(int i)
+        {
+            return listaCasas[i].GetTipo;
+        }
+
+        public Rectangle intersectoCasa(int i)
+        {
+            return listaCasas[i].collisionRect;
+        }
+
     }
 }

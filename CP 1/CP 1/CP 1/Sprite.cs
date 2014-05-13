@@ -208,14 +208,19 @@ namespace CP_1
             // versión nueva
 
             // ciclo principal
-            for (int i = 0; i < spriteManager.cantidadCasas(); i++)
+            Vector2 a = spriteManager.GetPlayerPosition();// spriteManager.cantidadCasas(1);
+            for (int i = 0; i < spriteManager.cantidadCasas(1); i++)
             {
-                Casas2 c = spriteManager.leeCasas(i);
-                if (c.GetTipo == 'c')
+                //Vector2 posicion = spriteManager.posicionCasa(i);
+                Vector2 arranque = spriteManager.arranqueCasa(i);
+                char tipo = spriteManager.tipoCasa(i);
+                Rectangle rectanguloCasa = spriteManager.intersectoCasa(i);
+
+                if (tipo == 'c')
                 {
-                    if (c.collisionRect.Intersects(this.collisionRect))
+                    if ( rectanguloCasa.Intersects(this.collisionRect))
                     {
-                        this.speed = c.GetArranque;
+                        this.speed = arranque;
                         clip = true;
                     }
                 }

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CP_1
 {
-    class Casas2
+    public class Casas2
     {
         int numero;
         Vector2 posicion;
@@ -31,7 +31,7 @@ namespace CP_1
             this.indice = indice;
             this.arranque = arranque;
             this.tipo = tipo;
-            this.spriteManager = spriteManager;
+            //this.spriteManager = spriteManager;
         }
 
         public Vector2 GetPosition
