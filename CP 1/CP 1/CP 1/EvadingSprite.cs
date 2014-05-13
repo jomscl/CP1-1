@@ -72,42 +72,7 @@ namespace CP_1
             // the X and/or Y directions
             Vector2 pplayer = spriteManager.GetPlayerPosition();
 
-            //if (evade)
-            //{
-            //    // Move away from the player horizontally
-            //    if (pplayer.X < position.X)
-            //    {
-            //        position.X += Math.Abs(speed.Y) + 2;
-            //        // Debug.WriteLine("Izquierda");
-            //    }
-            //    else if (pplayer.X > position.X)
-            //    {
-            //        position.X -= Math.Abs(speed.Y);
-            //        // Debug.WriteLine("Derecha");
-            //    }
-
-            //    // Move away from the player vertically
-            //    if (pplayer.Y < position.Y)
-            //    {
-            //        position.Y += Math.Abs(speed.X) + 2;
-            //        // Debug.WriteLine("Abajo");
-            //    }
-            //    else if (pplayer.Y > position.Y)
-            //    {
-            //        position.Y -= Math.Abs(speed.X);
-            //        //Debug.WriteLine("Arriba");
-            //    }
-            //}
-            //else
-            //{
-            //    if (Vector2.Distance(position, pplayer) < evasionRange)
-            //    {
-            //        // Player is within evasion range,
-            //        // reverse direction and modify speed
-            //        speed *= -evasionSpeedModifier;
-            //        evade = true;
-            //    }
-            //}
+           
 
             // revisión de fuera de pantalla
             limitePantalla(clientBounds);

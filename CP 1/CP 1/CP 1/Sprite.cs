@@ -38,12 +38,6 @@ namespace CP_1
         public string collisionCueName { get; private set; }
         public int velAbs=5;
 
-        //public Sprite(Texture2D textureImage, Vector2 position, Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed, SpriteEffects SpEfect, Point sentido, float evasionSpeedModifier, int evasionRange) 
-        //    : this(textureImage, position, frameSize, collisionOffset, currentFrame, sheetSize, speed, SpEfect, defaultMillisecondsPerFrame, sentido, evasionSpeedModifier, evasionRange)
-        //{
-        
-        //}
-
         public Sprite(Texture2D textureImage, Vector2 position, Point frameSize,
            int collisionOffset, Point currentFrame, Point sheetSize, Vector2 speed,
            string collisionCueName, SpriteEffects SpEfect, Point sentido)
@@ -226,42 +220,7 @@ namespace CP_1
                 }
             }
 
-            // versión antigua
-            //Rectangle rtemp;
-            //// casas principales
-            //for (int i = 0; i < SpriteManager.listaCasas.Count; i++)
-            //{
-            //    rtemp = new Rectangle((int)SpriteManager.listaCasas.,(int)SpriteManager.casas[i].Y,43,48); // parametrizar estos valores
-            //    if (rtemp.Intersects(this.collisionRect)){
-            //        // detectar donde se chocó.
-            //        if ((i>=0 && i <= 9) || (i>=26 && i <= 35)){
-            //            // contacto con casa vertical
-            //            position.X -= speed.X;
-            //            speed.X = 0;
-            //            if (speed.Y >= 0) { speed.Y = -velAbs; } else { speed.Y = velAbs; }
-            //        }
-            //        else {
-            //            // contacto con casa Horizontal
-            //            position.Y -= speed.Y;
-            //            speed.Y = 0;
-            //            if (speed.X >= 0) { speed.X = -velAbs; } else { speed.X = velAbs; }
-            //        }
-            //        clip = true;
-            //        //position -= speed*2;
-                   
-            //    }
-            //}
-
-            //// casas esquina
-            //for (int i = 0; i < SpriteManager.listaCasas.Count; i++)
-            //{
-            //    rtemp = new Rectangle((int)SpriteManager.casas2[i].X, (int)SpriteManager.casas[i].Y, 43, 48); // parametrizar estos valores
-            //    if (rtemp.Intersects(this.collisionRect))
-            //    {
-            //       // position -= speed*2;
-                   
-            //    }
-            //}
+         
             return clip;
         }
     }

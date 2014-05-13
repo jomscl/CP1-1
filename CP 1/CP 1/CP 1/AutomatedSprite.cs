@@ -28,15 +28,6 @@ namespace CP_1
         {
         }
 
-        // Ojo
-        //public AutomatedSprite(Texture2D textureImage, Vector2 position,
-        //Point frameSize, int collisionOffset, Point currentFrame, Point sheetSize,
-        //Vector2 speed, SpriteEffects SpEfect, Point sentido)
-        //    : base(textureImage, position, frameSize, collisionOffset, currentFrame,
-        //    sheetSize, speed,  SpEfect, sentido)
-        //{
-        //}
-
         public override Vector2 direction
         {
             get { return speed; }
