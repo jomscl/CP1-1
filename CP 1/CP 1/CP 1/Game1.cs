@@ -26,6 +26,10 @@ namespace CP_1
         int ancho = 1000;
         SpriteManager spriteManager;
        // Casas casas;
+        // Listado de casas
+        static public List<Casas2> listaCasas = new List<Casas2>();
+
+
 
         public Game1()
         {

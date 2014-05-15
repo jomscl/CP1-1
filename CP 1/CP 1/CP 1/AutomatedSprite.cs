@@ -35,13 +35,13 @@ namespace CP_1
 
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
-            
- 
-            position += direction;
-            
-            
             // condicion de borde
-            limitePantalla(clientBounds);
+            limitePantalla(clientBounds);  
+ 
+            position += speed;
+            
+            
+
 
             
             base.Update(gameTime, clientBounds);
