@@ -64,7 +64,7 @@ namespace CP_1
             if (paredCasa(clientBounds)) { contactoCasa = true; }
             if (!contactoCasa)
             {
-                speed = direccionEscape(clientBounds);
+                speed = direccionEscape(clientBounds); contactoCasa = true;
             }
            // First, move the sprite along its direction vector
             position += speed;

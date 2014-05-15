@@ -1,3 +1,4 @@
 Content\Images\Jugadores.xnb
 Content\Images\Jugador2.xnb
 Content\Images\NPC.xnb
+Content\Images\juego_s3-test_v3.xnb

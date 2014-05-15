@@ -22,12 +22,13 @@ namespace CP_1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        int alto = 690;
-        int ancho = 1000;
+        int alto = 600;
+        int ancho =960;
         SpriteManager spriteManager;
        // Casas casas;
         // Listado de casas
         static public List<Casas2> listaCasas = new List<Casas2>();
+        Texture2D backgroundTexture;
 
 
 
@@ -69,7 +70,7 @@ namespace CP_1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-           
+            backgroundTexture = Content.Load<Texture2D>(@"Images/juego_s3-test_v3");
         }
 
         /// <summary>
@@ -106,10 +107,11 @@ namespace CP_1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
+            spriteBatch.Begin();
             // TODO: Add your drawing code here
-
-           
+            // Draw background image
+            spriteBatch.Draw(backgroundTexture, new Rectangle(0, 0, Window.ClientBounds.Width, Window.ClientBounds.Height), null, Color.White, 0, Vector2.Zero, SpriteEffects.None, 0);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

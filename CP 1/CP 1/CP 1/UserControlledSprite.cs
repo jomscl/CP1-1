@@ -35,26 +35,26 @@ namespace CP_1
             {
                 Vector2 inputDirection = Vector2.Zero;
                 if (Keyboard.GetState( ).IsKeyDown(Keys.Left))
-                inputDirection.X =inputDirection.X- 1;
+                    inputDirection.X =inputDirection.X- 1;
                 if (Keyboard.GetState( ).IsKeyDown(Keys.Right))
-                inputDirection.X += 1;
+                    inputDirection.X += 1;
                 if (Keyboard.GetState( ).IsKeyDown(Keys.Up))
                     inputDirection.Y = inputDirection.Y-1;
                 if (Keyboard.GetState( ).IsKeyDown(Keys.Down))
-                inputDirection.Y += 1;
-                GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
-                if(gamepadState.ThumbSticks.Left.X != 0)
-                inputDirection.X += gamepadState.ThumbSticks.Left.X;
-                if(gamepadState.ThumbSticks.Left.Y != 0)
-                inputDirection.Y -= gamepadState.ThumbSticks.Left.Y;
-                return inputDirection * speed;
+                    inputDirection.Y += 1;
+                //GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
+                //if(gamepadState.ThumbSticks.Left.X != 0)
+                //inputDirection.X += gamepadState.ThumbSticks.Left.X;
+                //if(gamepadState.ThumbSticks.Left.Y != 0)
+                //inputDirection.Y -= gamepadState.ThumbSticks.Left.Y;
+                return inputDirection * new Vector2(6, 6);// *speed;
             }
         }
 
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
             // Move the sprite based on direction
-            position += speed;
+            position += direction;
             // If player moved the mouse, move the sprite
             MouseState currMouseState = Mouse.GetState();
             if (currMouseState.X != prevMouseState.X ||
