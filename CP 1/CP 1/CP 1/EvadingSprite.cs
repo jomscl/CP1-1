@@ -58,8 +58,7 @@ namespace CP_1
 
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
-            // First, move the sprite along its direction vector
-            position += speed;
+            
 
             // inicio deteccion de sentido optimo para arrancar
             if (paredCasa(clientBounds)) { contactoCasa = true; }
@@ -67,10 +66,12 @@ namespace CP_1
             {
                 speed = direccionEscape(clientBounds);
             }
-           
+           // First, move the sprite along its direction vector
+            position += speed;
+
             // Use the player position to move the sprite closer in
             // the X and/or Y directions
-            Vector2 pplayer = spriteManager.GetPlayerPosition();
+            //Vector2 pplayer = spriteManager.GetPlayerPosition();
 
            
 

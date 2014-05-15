@@ -54,7 +54,7 @@ namespace CP_1
         public override void Update(GameTime gameTime, Rectangle clientBounds)
         {
             // Move the sprite based on direction
-            position += direction;
+            position += speed;
             // If player moved the mouse, move the sprite
             MouseState currMouseState = Mouse.GetState();
             if (currMouseState.X != prevMouseState.X ||
