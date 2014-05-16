@@ -21,8 +21,10 @@ C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Con
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\NPC.xnb
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.pdb
-C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.csprojResolveAssemblyReference.cache
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.exe
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.pdb
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\juego_s3-test_v3.xnb
+C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\juego_s3-test_v3.xnb
+C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe.CodeAnalysisLog.xml
+C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe.lastcodeanalysissucceeded

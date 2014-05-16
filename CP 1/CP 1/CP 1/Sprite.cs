@@ -212,13 +212,13 @@ namespace CP_1
                         this.speed = CP_1.Game1.listaCasas[i].GetArranque;
                         Point posicionRelativa = CP_1.Game1.listaCasas[i].GetIndice;
                         // contacto izquierda
-                        if (posicionRelativa.Y == 0){this.position.X += 10;}
+                        if (posicionRelativa.X == 0){this.position.X += 10;}
                         // contacto abajo
-                        else if (posicionRelativa.X == 13) { this.position.Y -= 10; }
+                        else if (posicionRelativa.Y == 8) { this.position.Y -= 10; }
                         // contacto derecha
-                        else if (posicionRelativa.Y == 19) { this.position.X -= 10; }
+                        else if (posicionRelativa.X == 13) { this.position.X -= 10; }
                         // contacto arriba
-                        else if (posicionRelativa.X == 0) { this.position.Y += 10; }
+                        else if (posicionRelativa.Y == 0) { this.position.Y += 10; }
 
                         clip = false;
                     }

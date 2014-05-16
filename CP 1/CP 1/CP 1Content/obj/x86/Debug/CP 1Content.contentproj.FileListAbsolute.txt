@@ -1,3 +1,2 @@
 C:\Users\jom\Documents\Visual Studio 2012\Projects\CP 1\CP 1\CP 1Content\obj\x86\Debug\CP 1Content.contentprojResolveAssemblyReference.cache
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1Content\obj\x86\Debug\CP 1Content.contentprojResolveAssemblyReference.cache
-C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1Content\obj\x86\Debug\CP 1Content.contentprojResolveAssemblyReference.cache

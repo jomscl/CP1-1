@@ -55,18 +55,57 @@ namespace CP_1
         protected override void LoadContent( )
         {
             // creación de las casas
-            CP_1.Game1.listaCasas.Add(new Casas2(0, new Vector2(0, 0), 67, 124, 'v', new Point(0, 0), new Vector2(1, -4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(1, new Vector2(0, 67), 67, 117, 'v', new Point(0, 1), new Vector2(1, -4), 's'));
-            CP_1.Game1.listaCasas.Add(new Casas2(1, new Vector2(0, 133), 67, 111, 'v', new Point(0, 2), new Vector2(1, -4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(2, new Vector2(0, 200), 67, 105, 'v', new Point(0, 3), new Vector2(1, -4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(2, new Vector2(0, 267), 67, 99, 'v', new Point(0, 4), new Vector2(1, 4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(3, new Vector2(0, 333), 67, 93, 'v', new Point(0, 5), new Vector2(1, 4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(3, new Vector2(0, 400), 67, 87, 'v', new Point(0, 6), new Vector2(1, 4), 'c'));
-            CP_1.Game1.listaCasas.Add(new Casas2(4, new Vector2(0, 467), 67, 81, 'v', new Point(0, 7), new Vector2(1, 4), 's'));
-            CP_1.Game1.listaCasas.Add(new Casas2(4, new Vector2(0, 533), 67, 69, 'v', new Point(0, 8), new Vector2(1, 4), 'c'));
+            
+            // izquierda
+            CP_1.Game1.listaCasas.Add(new Casas2(0, new Vector2(0, 0), 67, 94, 'v', new Point(0, 0), new Vector2(1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(1, new Vector2(0, 67), 67, 94, 'v', new Point(0, 1), new Vector2(1, -4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(2, new Vector2(0, 133), 67, 94, 'v', new Point(0, 2), new Vector2(1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(3, new Vector2(0, 200), 67, 94, 'v', new Point(0, 3), new Vector2(1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(4, new Vector2(0, 267), 67, 94, 'v', new Point(0, 4), new Vector2(1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(5, new Vector2(0, 333), 67, 94, 'v', new Point(0, 5), new Vector2(1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(6, new Vector2(0, 400), 67, 94, 'v', new Point(0, 6), new Vector2(1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(7, new Vector2(0, 467), 67, 94, 'v', new Point(0, 7), new Vector2(1, 4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(8, new Vector2(0, 533), 67, 94, 'v', new Point(0, 8), new Vector2(1, 4), 'c'));
+
+            // abajo
+            CP_1.Game1.listaCasas.Add(new Casas2(9, new Vector2(69, 533), 67, 69, 'h', new Point(1, 8), new Vector2(-1, -4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(10, new Vector2(137, 533), 67, 69, 'h', new Point(2, 8), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(11, new Vector2(206, 533), 67, 69, 'h', new Point(3, 8), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(12, new Vector2(274, 533), 67, 69, 'h', new Point(4, 8), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(13, new Vector2(343, 533), 67, 69, 'h', new Point(5, 8), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(14, new Vector2(411, 533), 67, 69, 'h', new Point(6, 8), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(15, new Vector2(480, 533), 67, 69, 'h', new Point(7, 8), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(16, new Vector2(549, 533), 67, 69, 'h', new Point(8, 8), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(17, new Vector2(617, 533), 67, 69, 'h', new Point(9, 8), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(18, new Vector2(686, 533), 67, 69, 'h', new Point(10, 8), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(19, new Vector2(754, 533), 67, 69, 'h', new Point(11, 8), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(20, new Vector2(823, 533), 67, 69, 'h', new Point(12, 8), new Vector2(-1, 4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(21, new Vector2(891, 533), 67, 69, 'h', new Point(13, 8), new Vector2(-1, 4), 'c'));
+
+            // derecha
+            CP_1.Game1.listaCasas.Add(new Casas2(22, new Vector2(891, 467), 67, 94, 'v', new Point(13, 7), new Vector2(-1, 4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(23, new Vector2(891, 400), 67, 94, 'v', new Point(13, 6), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(24, new Vector2(891, 333), 67, 94, 'v', new Point(13, 5), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(25, new Vector2(891, 267), 67, 94, 'v', new Point(13, 4), new Vector2(-1, 4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(26, new Vector2(891, 200), 67, 94, 'v', new Point(13, 3), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(27, new Vector2(891, 133), 67, 94, 'v', new Point(13, 2), new Vector2(-1, -4), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(28, new Vector2(891, 67), 67, 94, 'v', new Point(13, 1), new Vector2(-1, -4), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(29, new Vector2(891, 0), 67, 94, 'v', new Point(13, 0), new Vector2(-1, -4), 'c'));
 
 
-
+            // arriba
+            CP_1.Game1.listaCasas.Add(new Casas2(30, new Vector2(823, 0), 67, 69, 'h', new Point(12, 0), new Vector2(4, 1), 's'));
+            CP_1.Game1.listaCasas.Add(new Casas2(31, new Vector2(754, 0), 67, 69, 'h', new Point(11, 0), new Vector2(4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(32, new Vector2(686, 0), 67, 69, 'h', new Point(10, 0), new Vector2(4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(33, new Vector2(617, 0), 67, 69, 'h', new Point(9, 0), new Vector2(4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(34, new Vector2(549, 0), 67, 69, 'h', new Point(8, 0), new Vector2(4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(35, new Vector2(480, 0), 67, 69, 'h', new Point(7, 0), new Vector2(4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(36, new Vector2(411, 0), 67, 69, 'h', new Point(6, 0), new Vector2(-4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(37, new Vector2(343, 0), 67, 69, 'h', new Point(5, 0), new Vector2(-4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(38, new Vector2(274, 0), 67, 69, 'h', new Point(4, 0), new Vector2(-4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(39, new Vector2(206, 0), 67, 69, 'h', new Point(3, 0), new Vector2(-4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(40, new Vector2(137, 0), 67, 69, 'h', new Point(2, 0), new Vector2(-4, 1), 'c'));
+            CP_1.Game1.listaCasas.Add(new Casas2(41, new Vector2(69, 0), 67, 69, 'h', new Point(1, 0), new Vector2(-4, 1), 's'));
 
 
 
@@ -216,7 +255,7 @@ namespace CP_1
                     rtemp = new Rectangle((int)CP_1.Game1.listaCasas[i].GetPosition.X, (int)CP_1.Game1.listaCasas[i].GetPosition.Y, (int)CP_1.Game1.listaCasas[i].GetAncho, (int)CP_1.Game1.listaCasas[i].GetAlto);
                     //resto=Math.DivRem(i, 2, resto);
                     if ( (i%2) == 0) { colorIterativo = Color.Red; } else { colorIterativo = Color.Yellow; }
-                    DrawBorder(rtemp, 1, colorIterativo);
+                   // DrawBorder(rtemp, 1, colorIterativo);
                     //spriteBatch.Draw(whiteRectangle, new Rectangle((int)CP_1.Game1.listaCasas[i].GetPosition.X, (int)CP_1.Game1.listaCasas[i].GetPosition.Y, (int)CP_1.Game1.listaCasas[i].GetAncho, (int)CP_1.Game1.listaCasas[i].GetAncho),Color.White);
                 }
             }

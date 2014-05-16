@@ -2,3 +2,5 @@ CP 1/CP 1/CP 1Content/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cac
 *.exe
 *.pdb
 *.cache
+*.pdb
+*.exe

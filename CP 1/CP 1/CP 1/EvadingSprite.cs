@@ -66,20 +66,39 @@ namespace CP_1
             {
                 speed = direccionEscape(clientBounds); contactoCasa = true;
             }
+            else
+            {
+                Vector2 pplayer = spriteManager.GetPlayerPosition();
+                speed = Vector2.Zero;
+                Random random = new Random();
+                  
+                if (Vector2.Distance(this.position, pplayer) < 100)
+                {
+                    if (Math.Abs(pplayer.X - position.X) < 80)
+                    {
+                        if (pplayer.X < position.X) { speed.X += 3; } else { speed.X -= 3; }
+                        speed.Y+= (int)random.Next(-1, 1);
+                    }
+                    if (Math.Abs(pplayer.Y - position.Y) < 80)
+                    {
+                        if (pplayer.Y < position.Y) { speed.Y += 3; } else { speed.Y -= 3; }
+                        speed.X += (int)random.Next(-1, 1);
+                    }
+                }
+                
+            }
            // First, move the sprite along its direction vector
             position += speed;
 
             // Use the player position to move the sprite closer in
             // the X and/or Y directions
-            //Vector2 pplayer = spriteManager.GetPlayerPosition();
-
            
 
             // revisión de fuera de pantalla
             limitePantalla(clientBounds);
             //paredCasa(clientBounds) ;
 
-            // calculo de sentido, no funciona bien!
+            // calculo de sentido
             if (speed.X > 0) { sentido.X = 0; } else { sentido.X = 1; }
             if (speed.Y > 0) { sentido.Y = 0; } else { sentido.Y = 1; }
 
