@@ -22,8 +22,9 @@ namespace CP_1
         UserControlledSprite player; // solo el jugador principal, en este pc
         Texture2D whiteRectangle;
 
+        
         // Lista de srpites utiles, tanto net players como el ladron
-        List<Sprite> spriteList = new List<Sprite>();
+        //List<Sprite> spriteList = new List<Sprite>();
 
         //// Listado de casas
         //List<Casas2> listaCasas = new List<Casas2>();
@@ -182,10 +183,10 @@ namespace CP_1
 
             spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             player = new UserControlledSprite(Game.Content.Load<Texture2D>(@"Images/Jugadores"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(6, 6), "", SpriteEffects.None, new Point(0, 0));
-            //spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
+            CP_1.Game1.spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
             //spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(300, 150), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
             //spriteList.Add(new AutomatedSprite(Game.Content.Load<Texture2D>(@"Images/Jugador2"), new Vector2(150, 300), new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(1, 1), "", SpriteEffects.None, new Point(0, 0)));
-            spriteList.Add(new EvadingSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), npc, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(0, 0), "", this, .75f, 150, SpriteEffects.None, new Point(0, 0)));
+            CP_1.Game1.spriteList.Add(new EvadingSprite(Game.Content.Load<Texture2D>(@"Images/NPC"), npc, new Point(35, 60), 10, new Point(0, 0), new Point(7, 2), new Vector2(0, 0), "", this, .75f, 150, SpriteEffects.None, new Point(0, 0)));
 
             pixel = new Texture2D(Game.GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
             pixel.SetData(new[] { Color.White }); // so that we can draw whatever color we want on top of it
@@ -222,9 +223,9 @@ namespace CP_1
             player.Update(gameTime, Game.Window.ClientBounds);
 
             // Update all non-player sprites
-            for (int i = 0; i < spriteList.Count; ++i)
+            for (int i = 0; i < CP_1.Game1.spriteList.Count; ++i)
             {
-                Sprite s = spriteList[i];
+                Sprite s = CP_1.Game1.spriteList[i];
                 
                 
                 s.Update(gameTime, Game.Window.ClientBounds);
@@ -255,7 +256,7 @@ namespace CP_1
                     rtemp = new Rectangle((int)CP_1.Game1.listaCasas[i].GetPosition.X, (int)CP_1.Game1.listaCasas[i].GetPosition.Y, (int)CP_1.Game1.listaCasas[i].GetAncho, (int)CP_1.Game1.listaCasas[i].GetAlto);
                     //resto=Math.DivRem(i, 2, resto);
                     if ( (i%2) == 0) { colorIterativo = Color.Red; } else { colorIterativo = Color.Yellow; }
-                   // DrawBorder(rtemp, 1, colorIterativo);
+                    //DrawBorder(rtemp, 1, colorIterativo);
                     //spriteBatch.Draw(whiteRectangle, new Rectangle((int)CP_1.Game1.listaCasas[i].GetPosition.X, (int)CP_1.Game1.listaCasas[i].GetPosition.Y, (int)CP_1.Game1.listaCasas[i].GetAncho, (int)CP_1.Game1.listaCasas[i].GetAncho),Color.White);
                 }
             }
@@ -263,7 +264,7 @@ namespace CP_1
             // Draw the player
             player.Draw(gameTime, spriteBatch);
             // Draw all sprites
-            foreach (Sprite s in spriteList)
+            foreach (Sprite s in CP_1.Game1.spriteList)
                 s.Draw(gameTime, spriteBatch);
             spriteBatch.End();
             
@@ -275,7 +276,11 @@ namespace CP_1
             return player.GetPosition;
         }
 
-
+        public Vector2 GetNpcPosition()
+        {
+            return CP_1.Game1.spriteList[CP_1.Game1.spriteList.Count - 1].GetPosition;
+            // return player.GetPosition;
+        }
         // rutinas para acceder a los datos de cada casa, pero no funciona!
         public int cantidadCasas(int i=0)
         {

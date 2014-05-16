@@ -26,6 +26,7 @@ namespace CP_1
         int ancho =960;
         SpriteManager spriteManager;
        // Casas casas;
+        static public List<Sprite> spriteList = new List<Sprite>(); 
         // Listado de casas
         static public List<Casas2> listaCasas = new List<Casas2>();
         Texture2D backgroundTexture;

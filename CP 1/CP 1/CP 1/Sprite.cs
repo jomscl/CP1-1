@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace CP_1
 {
-    abstract class Sprite
+    public class Sprite
     {
 
         // Save a reference to the sprite manager to
@@ -99,15 +99,15 @@ namespace CP_1
                 new Rectangle(currentFrame.X * frameSize.X, currentFrame.Y * frameSize.Y, frameSize.X, frameSize.Y), Color.White, 0, Vector2.Zero, 1f, SpEfect, 0);
         }
 
-        public abstract Vector2 direction
-        {
-            get;
-        }
+        //public abstract Vector2 direction
+        //{
+        //    get;
+        //}
 
-        public abstract Point psentido
-        {
-            get;
-        }
+        //public abstract Point psentido
+        //{
+        //    get;
+        //}
 
         public Vector2 GetPosition
         {

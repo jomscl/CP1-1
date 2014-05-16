@@ -26,5 +26,4 @@ C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.pdb
 C:\Users\jossa\Documents\Arduino\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\juego_s3-test_v3.xnb
 C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\Content\Images\juego_s3-test_v3.xnb
-C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe.CodeAnalysisLog.xml
-C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\bin\x86\Debug\CP 1.exe.lastcodeanalysissucceeded
+C:\Users\jom\Documents\Desarrollos\Github\CP1-1\CP 1\CP 1\CP 1\obj\x86\Debug\CP 1.csprojResolveAssemblyReference.cache
